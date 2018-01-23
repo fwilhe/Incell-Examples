@@ -2,3 +2,20 @@
 
 * Install https://github.com/fwilhe/Incell[Incell] to your local maven repo.
 * Run one of the examples using `./gradlew`
+
+== Using in a "Kotlin Script" (.kts) file
+
+The library can be used in a `.kts` file with https://github.com/holgerbrandl/kscript[kscript] for dependency resolution.
+
+.Example.kts
+----
+import com.github.fwilhe.incell.sine
+import com.github.fwilhe.incell.spreadsheet
+
+//DEPS com.github.fwilhe.incell:incell:0-unreleased
+
+spreadsheet {
+    column("sin(x)", ::sine)
+}
+        .print()
+----
