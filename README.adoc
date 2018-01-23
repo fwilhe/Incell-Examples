@@ -1,0 +1,4 @@
+= Incell Examples
+
+* Install https://github.com/fwilhe/Incell[Incell] to your local maven repo.
+* Run one of the examples using `./gradlew`
