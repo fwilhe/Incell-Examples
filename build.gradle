@@ -13,7 +13,7 @@ apply plugin: 'application'
 
 mainClassName = 'com.github.fwilhe.incell.example.SimpleKt'
 
-defaultTasks 'run'
+defaultTasks 'runSimple', 'runPerformanceModel', 'runExpenses'
 
 repositories {
     mavenCentral()
@@ -25,4 +25,21 @@ dependencies {
     compile 'com.github.fwilhe.incell:incell:0-unreleased'
     testCompile 'junit:junit:4.11'
     testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+}
+
+task runSimple(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'com.github.fwilhe.incell.example.SimpleKt'
+}
+
+
+task runPerformanceModel(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'com.github.fwilhe.incell.example.PerformanceModelKt'
+}
+
+
+task runExpenses(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'com.github.fwilhe.incell.example.ExpensesKt'
 }
